@@ -91,3 +91,5 @@ print(a, b, c, d, sep="\t", end=end)
 print(e, f, g, h, sep="\t", end=end)
 print(i, j, k, l, sep="\t", end=end)
 print(m, n, o, p, sep="\t", end=end)
+
+# TODO: írni még a castolásról!!!
