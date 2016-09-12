@@ -1,0 +1,3 @@
+Ha egy futóversenyen megelőzöd a 2. helyezettet, hányadik helyre kerülsz?
+Ha egy futóversenyen megelőzöd az utolsó helyezettet, hányadik helyre kerülsz?
+...
