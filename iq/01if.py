@@ -54,7 +54,7 @@ if message > c:
 
 # Ez ekvivalens a következő (explicit) kifejezéssel:
 # if bool(message):
-# De a cast-olás implicit is megtörténik.
+# De a cast-olás implicit is megtörténik (a háttérben):
 if message:
     print("<message> is implicitly converted to bool")
     print("The truth value of a non-empty string is True")
@@ -66,6 +66,11 @@ dude = "WiW"
 if dude == "WiW" or dude == "Csx":
     print("What's up with the dudes?")
     print("-" * 30)
-elif dude == "WiW" and dude == "Csx":
+if dude == "WiW" and dude == "Csx":
     print("What's up with the dudes?")
     print("-" * 30)
+
+# FONTOS! Assertet mindig magadnak írsz. User inputot
+# soha ne asserttel, hanem if-fel ellenőrizz!
+dude = "Csx"
+assert dude == "WiW", "Dude! <dude> is not WiW!"
