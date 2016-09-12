@@ -1,9 +1,11 @@
-Háttértudás?
+Háttér
 - Angol?
 - Adattípusok
 - Változók
 - Fordított/értelmezett nyelv
 - Alacsony/magas szint (absztrakció)
+
+--------------------------------------------
 
 - Interaktív interpreter vs. scriptelés
 -- Script struktúrája
@@ -84,7 +86,7 @@ Gondolatolvasó
 - OSZTÁLYOK!
 -- absztrahálunk: objektum vs. osztály
 -- attribútum: objektum vs. osztály
--- __init__
+-- konstruktor
 -- metódusok: (objektum vs. osztály)
 -- leszármazás, öröklés
 -- ez csak Pythonban van így :(
@@ -111,7 +113,7 @@ Gondolatolvasó
 
 - modulok
 -- Paradigmaváltás (imperatív -> OO)
--- __main__
+-- main!
 -- modul elmentése
 -- import gyönyörei
 -- PYTHONPATH és "Hol a scriptem?"
