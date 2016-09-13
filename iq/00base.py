@@ -1,3 +1,6 @@
+# Ehhez a részhez anyag: Gérard Swinnen könyvben 22.-29. (2. fejezet)
+#                        Koós könyvében: 14.-19. (5. fejezet) 20.-22. (6. fejezet eleje)
+
 # Ez komment
 
 # -------------------------------
@@ -56,6 +59,8 @@ print(b % a)  # hanem a maradékot adja vissza
 # Ezeket általában együtt használjuk:
 egeszresz = b // a
 maradek = b % a
+
+print(b**a)  # hatványozás
 
 # ------------
 # del kulcsszó

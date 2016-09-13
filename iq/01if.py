@@ -1,3 +1,5 @@
+# Ehhez a részhez anyag a Swinnen könyvben: 30.-34. (3. fejezet)
+
 # Egy pár szó a logikai elágazásról (if)
 # A logikai elágazás a pythonban összetett utasítás, ami azt jelenti, hogy
 # több soros is lehet. Ezt szerintem minden nyelvben így van (mármint hogy
@@ -13,16 +15,13 @@ a = 1
 b = 1.
 c = "1"
 
-print("-"*30)  # Dísznek
 # (Figyeld a kettőspontot és a behúzást!)
 if a == b:
     print("a == b: <a> implicit floattá konvertálódott")
     print("1. == 1. valóban")
-    print("-"*30)
 
 if a == c:
     print("This won't run")
-    print("-"*30)
 
 # Összehasonlító operátorok:
 # ==, <, <=, >, >=, magától értődőek.
@@ -55,18 +54,15 @@ igaz = True
 if a == igaz:
     print("a == igaz: <a> bool-lá konvertálódik")
     print("True == True valóban")
-    print("-"*30)
 
 # Az else ág akkor fut, ha az előtte lévő if nem futott le
 # Melyik ág fut? MIÉRT?
 if c == igaz:
     print("Fura. c == igaz értéke:", c == igaz)
     print("Miért van ez?")
-    print("-"*30)
 else:
     print("Fura. c == igaz értéke:", c == igaz)
     print("Miért van ez?")
-    print("-"*30)
 
 # Az elif ág akkor fut, ha az előtte lévő if (vagy elif) nem futott le.
 # elif ágat akárhányat betehetsz, if és else csak 1-1 lehet.
@@ -76,14 +72,12 @@ if z == igaz:
 elif not z:  # not kulcsszó a logikai kifejezés elejére kell, hogy kerüljön
     print("<z> implicit konvertálódik False-ra")
     print("not False valóban True")
-    print("-"*30)
 else:
     print("This won't run because we entered the elif branch above")
 
 if b > z:
     print("b > z: egészek és törtek összehasonlíthatóak")
     print("1. valóban nagyobb, mint 0")
-    print("-"*30)
 
 message = "Szeretem a sört. Mmmmm!!!"
 
@@ -91,17 +85,14 @@ if message > c:
     print("string > c: a stringek abc rend szerint kerülnek összehasonlításra")
     print("A számok konvencionálisan (és az ASCII és UTF-8 karaktertáblákban)")
     print("Előbb jönnek az abc-ben, mint a betűk.")
-    print("-"*30)
 
 dude = "WiW"
 
 # Melyik ág fut le?
 if dude == "WiW" or dude == "Csx":
     print("What's up with the dudes?")
-    print("-" * 30)
 if dude == "WiW" and dude == "Csx":
     print("What's up with the dudes?")
-    print("-" * 30)
 
 # Az assert kulcsszó egy érdekes konstrukció. Önellenőrzésre használjuk, akkor,
 # ha tudjuk, hogy egy adott változónak a programunk egy adott pontján egy bizonyos
@@ -161,3 +152,39 @@ elif len(szoveg) > 1000:
 else:
     print("Ez az ág sohasem fut le :) MIÉRT?")
     quit()  # leállunk, mert marhaság van
+
+
+# Logikai műveletek:
+a = 2
+szoveg = "Sajt"
+
+if a < 4 and szoveg == "Sajt":
+    print("Az <and> a logikai és. Két feltétel közé írjuk.")
+    print("Csak akkor értékelődik igazra, ha mindkét logikai feltétel igaz")
+
+b = 0
+
+if b or a:
+    print("Ez megint implicit castolás boolra")
+    print("Az <or> a logikai vagy")
+    print("Akkor értékelődik igazra, ha egyik VAGY másik VAGY mindkét feltétel igaz")
+
+if (0 < a < 10 and isinstance(a, int)) or (not b and szoveg == "Sajt"):
+    print("Lehet ezt kombinálni szépen :)")
+    print("Látható, hogy zárójelezni lehet. Érdemes is, mert")
+    print("hamar megbonyolódhat a dolog.")
+
+# Pythonban nagyon fontos, hogy átlásd a programodat, amit írsz.
+# A nyelv egyik legnagyobb előnye pont az olvashatóság
+# Csak képzelj el egy, az előzőhöz hasonló feltételrendszert.
+# Utána képzeld el, hogy még van hozzá egy else: ág is...
+# Az else-nél ki sem írod a feltételt, az megy oda, ami nem az if-be megy.
+# Hosszú feltételsornál szinte átláthatatlan, hogy mi megy az else ágba...
+# Ha nagyon bonyás, kiveheted a feltételrendszer elemeit változókba:
+a_integer_es_0_10_kozott_van = (0 < a < 10) and isinstance(a, int)
+b_hamis_es_szoveg_valamit_tartalmaz = not b and szoveg == "Valami"
+# Itt nyilván bool értékek kerülnek a változókba.
+
+# újraírva a fenti szörnyeteg:
+if a_integer_es_0_10_kozott_van or b_hamis_es_szoveg_valamit_tartalmaz:
+    pass  # ez nyelvi kulcsszó, azt jelenti, "ne csinálj semmit" :)
