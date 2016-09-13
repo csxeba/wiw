@@ -2,19 +2,19 @@
 # A logikai elágazás a pythonban összetett utasítás, ami azt jelenti, hogy
 # több soros is lehet. Ezt szerintem minden nyelvben így van (mármint hogy
 # az IF több soros). Az ilyen összetett utasítások használatánál jelezni
-# kell, hogy hol kezdődik egy utasítás-blokk és hol végződik.
-# Ezt C/C++-ban, C#-ban, Java-ban pl. {} kapcsos zárójellel jelölik.
-# Pythonban ezt behúzással jelöljük (tab)
+# kell, hogy hol kezdődik és végződik egy kód-blokk.
+# Ezt C/C++-ban, C#-ban, Java-ban, JavaScriptben pl. {} kapcsos zárójellel jelölik.
+# Pythonban ezt a kezdő sor után kettősponttal, majd behúzással jelöljük (tab)
 # Mivel az összetett utasítások egymásba is ágyazhatóak (tehát ifen belül
-# if, azon belül újabb if, stb.), ez jó nagy káoszhoz tud vezetni.
+# if, azon belül újabb if, stb.), ez jó nagy káoszhoz tud vezetni és
+# egytabos, kéttabos, stb. sok tabos behúzásokat fogsz majd látni.
 
 a = 1
 b = 1.
 c = "1"
 
-# int, float és bool viszonya egymáshoz logikai kifejezésekben
 print("-"*30)  # Dísznek
-# (Figyeld a behúzást!)
+# (Figyeld a kettőspontot és a behúzást!)
 if a == b:
     print("a == b: <a> implicit floattá konvertálódott")
     print("1. == 1. valóban")

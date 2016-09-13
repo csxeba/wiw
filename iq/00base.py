@@ -106,7 +106,7 @@ del a, b, c, igaz, maradek, egeszresz
 # A nevesíthető argumentumokat kulcsszó-argumentumnak is hívjuk. Gyakran rövidítik
 # kw vagy kwargként, az anonim argumentumokat arg/args-nak szokták rövidíteni.
 
-# Na vissza a printhez, elsőre egyszerű megközelítéssel:
+# Na vissza a printhez, elsőre egyszerűbb megközelítéssel:
 print(a)
 # A print eljárásnak több (névtelen) argumentuma is lehet:
 print("a:", a, "b:", b)
