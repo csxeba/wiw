@@ -45,7 +45,7 @@ print(bool(None))
 # amit átadsz neki.
 # Pl. ezek teljesen érvényes konstrukciók:
 if a:
-    print("A igaz bool értékké konvertálódott implicit módon.")
+    print("Az <a> True értékké konvertálódott implicit módon.")
 elif not a:
     print("Ez az ág nem fog futni, mert negáltuk az igazzá konvertálódott <a>-t")
 
@@ -57,7 +57,8 @@ if a == igaz:
     print("True == True valóban")
     print("-"*30)
 
-# Melyik ág fut? Miért?
+# Az else ág akkor fut, ha az előtte lévő if nem futott le
+# Melyik ág fut? MIÉRT?
 if c == igaz:
     print("Fura. c == igaz értéke:", c == igaz)
     print("Miért van ez?")
@@ -67,35 +68,29 @@ else:
     print("Miért van ez?")
     print("-"*30)
 
+# Az elif ág akkor fut, ha az előtte lévő if (vagy elif) nem futott le.
+# elif ágat akárhányat betehetsz, if és else csak 1-1 lehet.
 z = 0
-
 if z == igaz:
     print("Természetesen ez nem fut, mivel a 0 igazsságértéke False")
 elif not z:  # not kulcsszó a logikai kifejezés elejére kell, hogy kerüljön
-    print("<z> implicitly gets casted to bool")
-    print("not False is True valóban")
+    print("<z> implicit konvertálódik False-ra")
+    print("not False valóban True")
     print("-"*30)
 else:
     print("This won't run because we entered the elif branch above")
 
 if b > z:
-    print("b > z: integers and floats can be compared")
-    print("1. is greater than 0 valóban.")
+    print("b > z: egészek és törtek összehasonlíthatóak")
+    print("1. valóban nagyobb, mint 0")
     print("-"*30)
 
-message = "I like beer. Mmmmm!!!"
+message = "Szeretem a sört. Mmmmm!!!"
 
 if message > c:
-    print("string > c: strings are compared alphabetically")
-    print("Numbers are earlier in the alphabet than lettes")
-    print("-"*30)
-
-# Ez ekvivalens a következő (explicit) kifejezéssel:
-# if bool(message):
-# De a cast-olás implicit is megtörténik (a háttérben):
-if message:
-    print("<message> is implicitly converted to bool")
-    print("The truth value of a non-empty string is True")
+    print("string > c: a stringek abc rend szerint kerülnek összehasonlításra")
+    print("A számok konvencionálisan (és az ASCII és UTF-8 karaktertáblákban)")
+    print("Előbb jönnek az abc-ben, mint a betűk.")
     print("-"*30)
 
 dude = "WiW"
@@ -108,7 +103,61 @@ if dude == "WiW" and dude == "Csx":
     print("What's up with the dudes?")
     print("-" * 30)
 
-# FONTOS! Assertet mindig magadnak írsz. User inputot
-# soha ne asserttel, hanem if-fel ellenőrizz!
+# Az assert kulcsszó egy érdekes konstrukció. Önellenőrzésre használjuk, akkor,
+# ha tudjuk, hogy egy adott változónak a programunk egy adott pontján egy bizonyos
+# értéke kell, hogy legyen.
+# Ha az assertnek átadott logikai feltétel False-ra értékelődik ki, akkor a program leáll
+# hibával és kiírja a vessző utáni stringet üzenetként.
 dude = "Csx"
 assert dude == "WiW", "Dude! <dude> is not WiW!"
+# FONTOS! Assertet mindig magadnak írsz. Pl. user inputot
+# soha ne asserttel, hanem if-fel ellenőrizz!
+
+# Néhány jó kis beépített függvény, amit if-eknél tutira használni kell majd:
+
+print("<dude> a str példánya?", isinstance(dude, str))
+# Az isinstance (példánya-e) azt ellenőrzi, hogy az átadott érték adott típusú-e.
+# Mivel a Python dinamikusan típusos nyelv, sokszor kell ellenőrzini pl. változók
+# típusát.
+
+x = None
+
+# Ezt élesben pl így használjuk majd:
+if isinstance(x, str):
+    x = int(x)
+elif isinstance(x, float):
+    x = round(x, 2)
+elif isinstance(x, bool):
+    x = float(x)
+else:  # Ha a fentiek közül egyik sem:
+    print("Nem támogatott típus!")
+    quit()  # Leállunk, lehalasztjuk a programot
+
+# (a None típusa egyébként NoneType)
+
+# Másik hasznos függvény: type()
+# az adott érték típusát adja vissza
+
+a, b = 2.7182, 3.1415
+
+if type(a) == type(b):
+    print("A két típus megegyezik")
+    print("Az értékük nem, csak a típusuk!")
+    print("a == b:", a == b)
+else:
+    print("Ez nem fut le, mert <a> és <b> is float :)")
+
+
+# Egy utolsó hasznos függvény, a len()
+# az átadott érték hosszát adja vissza, ennek egyelőre stringeknél van értelme
+szoveg = "Hello World"
+
+if len(szoveg) < 200:
+    print("Ez egy rövid szöveg")
+elif 200 <= len(szoveg) < 1000:  # ilyet lehet :)
+    print("Ez egy közepes szöveg")
+elif len(szoveg) > 1000:
+    print("Na ez egy hosszú szöveg")
+else:
+    print("Ez az ág sohasem fut le :) MIÉRT?")
+    quit()  # leállunk, mert marhaság van
