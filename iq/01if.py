@@ -182,9 +182,9 @@ if (0 < a < 10 and isinstance(a, int)) or (not b and szoveg == "Sajt"):
 # Hosszú feltételsornál szinte átláthatatlan, hogy mi megy az else ágba...
 # Ha nagyon bonyás, kiveheted a feltételrendszer elemeit változókba:
 a_integer_es_0_10_kozott_van = (0 < a < 10) and isinstance(a, int)
-b_hamis_es_szoveg_valamit_tartalmaz = not b and szoveg == "Valami"
+b_hamis_es_szoveg_sajtot_tartalmaz = not b and szoveg == "Sajt"
 # Itt nyilván bool értékek kerülnek a változókba.
 
 # újraírva a fenti szörnyeteg:
-if a_integer_es_0_10_kozott_van or b_hamis_es_szoveg_valamit_tartalmaz:
+if a_integer_es_0_10_kozott_van or b_hamis_es_szoveg_sajtot_tartalmaz:
     pass  # ez nyelvi kulcsszó, azt jelenti, "ne csinálj semmit" :)
