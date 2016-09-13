@@ -19,9 +19,9 @@ c = "1"
 if a == b:
     print("a == b: <a> implicit floattá konvertálódott")
     print("1. == 1. valóban")
-
+# Behúzás vége, ez az alsó if már nem a fenti if része
 if a == c:
-    print("This won't run")
+    print("Ez nem fog lefutni, az 1 int és az '1' string nem egyenlőek")
 
 # Összehasonlító operátorok:
 # ==, <, <=, >, >=, magától értődőek.
@@ -177,8 +177,8 @@ if (0 < a < 10 and isinstance(a, int)) or (not b and szoveg == "Sajt"):
 # Pythonban nagyon fontos, hogy átlásd a programodat, amit írsz.
 # A nyelv egyik legnagyobb előnye pont az olvashatóság
 # Csak képzelj el egy, az előzőhöz hasonló feltételrendszert.
-# Utána képzeld el, hogy még van hozzá egy else: ág is...
-# Az else-nél ki sem írod a feltételt, az megy oda, ami nem az if-be megy.
+# Utána képzeld el, hogy még van hozzá egy else ág is...
+# Az else-nél ki sem írod a feltételt, az megy oda, ami nem az if-be ment.
 # Hosszú feltételsornál szinte átláthatatlan, hogy mi megy az else ágba...
 # Ha nagyon bonyás, kiveheted a feltételrendszer elemeit változókba:
 a_integer_es_0_10_kozott_van = (0 < a < 10) and isinstance(a, int)
@@ -188,3 +188,20 @@ b_hamis_es_szoveg_sajtot_tartalmaz = not b and szoveg == "Sajt"
 # újraírva a fenti szörnyeteg:
 if a_integer_es_0_10_kozott_van or b_hamis_es_szoveg_sajtot_tartalmaz:
     pass  # ez nyelvi kulcsszó, azt jelenti, "ne csinálj semmit" :)
+
+# Egy másik megközelítés egymásba ágyazni az ifeket:
+if isinstance(a, int):
+    if 0 < a < 10:
+        pass
+elif not b:
+    if szoveg == "Sajt":
+        pass
+
+# Ez (ha minden igaz :D) ekvivalens a szörnyeteggel
+# Feltételeknél elengedhetetlen a logikus gondolkodás,
+# hogy mindig tudd, melyik változóban éppen mi van,
+# ha azt "összeéseled" egy másikkal, akkor mi lesz,
+# mi kerül az elifbe, mi kerül az else-be, stb stb.
+
+# Ha idáig eljutottál az anyagban, akkor mostmár megcsinálhatod
+# a <gondolatolvaso.py> és a <quiz.py> katákat.

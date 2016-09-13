@@ -203,6 +203,10 @@ print(a, end=" Hello Szabi\n")
 # A fenti 3 utasítás egy sorban :)
 print(round(3.33333, 2), end=" Hello Szabi\n")
 
+# ----------------------
+# string castolás számmá
+# ----------------------
+
 # Stringeket is lehet számokká konvertálni, ez főleg akkor hasznos, ha
 # input()-tal bekérsz valamit. Az input() mindig stringet ad vissza,
 # azt pedig vissza kell alakítani számmá.
