@@ -165,3 +165,21 @@ kerül és onnantól másra mutat.
 Aliasnak azokat a változókat nevezzük, amik ugyanarra az értékre mutatnak"""
 print("'RAM' in nagy_string:", "RAM" in nagy_string)
 # csinálhatsz ilyesmikre if elágazásokat (érettségin tuti kell majd)
+
+# Most szó volt a megváltoztatható és meg nem változtatható adattípusokról,
+# illetve az aliasolásról, meg kell említeni az <is> kulcsszót és az <id>
+# beépített függvényt
+# Pythonban minden, ami létrejön a memóriában, kap egy egyedi id-t, ami
+# általában a memóriában elfoglalt helyének a címe (32/64 bit)
+# Ez lekérhető:
+lista1 = ["Szervác", "Pongrác", "Bonifác"]
+print("lista 1 ID-ja:", id(lista1))
+# Alias esetén nyilván a két ID meg fog egyezni
+# valódi másolat esetén pedig eltérő lesz:
+lista2 = lista1
+print("Alias?", id(lista1) == id(lista2))
+# A fenti szintaxist egyszerűsíti az <is> kulcsszó:
+print("Alias?", lista1 is lista2)
+
+# Ez nem csak egyenlőséget vizsgálat, hanem azonosságot is.
+# Bár nyilván azonosság esetén egyenlőség is fenn fog állni :)
