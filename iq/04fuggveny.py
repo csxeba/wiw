@@ -102,8 +102,8 @@ assert besuvasztva == pontok, "Hopsz :S"
 def bekero(prompt="> "):
     return input(prompt)
 
-valasz = bekero()
-valasz2 = bekero("Simon mondja: ")
+val = bekero()
+val2 = bekero("Simon mondja: ")
 # Az, hogy nevesíted-e az argumentumot, a második esetben mindegy
 # A függvényhívás így is működik: bekero(prompt="Simon mondja: ")
 
@@ -188,5 +188,3 @@ def henger_terfogata(atmero, magassag):
 # globális változó deklarációja, ha szükséges (de ez általában kiváltható
 # paraméterek passzolgatásával)
 # a fő függvényed hívása :D
-
-
