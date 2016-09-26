@@ -124,9 +124,8 @@ print("b:", b, end=" ")
 print()  # üres print, hogy új sort kezdjünk
 # Az üres print azért kezd új sort, mert az end kulcsszó-argumentum default értéke "\n"
 
-# Látható, hogy az inputtal ellentétben a kulcsszó-argumentumok csak explicit megnevezés
-# útján érhetőek el, mivel
-
+# A kulcsszó-argumentumok a print esetében csak explicit megnevezés útján érhetőek
+# el. Hogy ez miért van így, majd később megtanuljuk.
 
 # --------------------
 # Többszörös értékadás
