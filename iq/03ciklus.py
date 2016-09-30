@@ -20,13 +20,13 @@ i = 0
 while i < 3:
     i += 1
 else:
-    print("i értéke: ", i)
+    print("i értéke az else-ben:", i)
 
 # Én személy szerint a while-t ritkán használom, de van egy nagyon praktikus alkalmazása
 # Végtelen ciklus:
 print("Hello Szab", end="")
 while 1:
-    print("i")  # A program futását leállíthatod, ha nyomsz egy Ctrl-C-t :)
+    print("i", end="")  # A program futását leállíthatod, ha nyomsz egy Ctrl-C-t :)
 
 # Ilyen végtelen ciklusokat gyakran használunk, például eseményfigyelőként:
 dobasosszeg = 0
