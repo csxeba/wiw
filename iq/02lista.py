@@ -59,6 +59,13 @@ print(lista)
 lista = lista + ["6. elem O.o"]
 # vagy
 lista += ["7. elem ááááá"]
+# listához konkatenálhatsz tuple-t:
+lista += ("8. elem...",)  # itt az egyelemű tuple deklarációját is láthatod (vessző kell)
+print(lista)
+# Megjegyzés: az alábbi kód nem egyelemű tuple, itt a zárójelet figyelmen kívül hagyja az értelmező:
+ez_nem_tuple = ("adatka")
+print("ez_nem_tuple típusa:", type(ez_nem_tuple))
+
 # Ennél van egy sokkal elegánsabb megoldás, de arról majd később.
 
 # -------------------
@@ -67,7 +74,7 @@ lista += ["7. elem ááááá"]
 
 # Érdekes Pythonos listaszerűség, más programnyelvben nincs is ilyen
 # Olyan mint a lista, de az elemeit nem lehet megváltoztatni.
-tup = ("1. elem", "2. elem", "3. elem", "4. elem", "5. elem :)")
+tup = ("1. elem", "2. elem", "3. elem", "4. elem", "5. elem!!")
 # Amikor definiáljuk, akkor a zárójel elhagyható:
 tup2 = 1, 3.0, "valami string", None, False
 # Magyarul sokaságnak vagy rendezett n-esnek (ennes) lehet fordítani
@@ -82,7 +89,7 @@ tup += ("Hello",)  # Ilyet lehet, mert ez új tuple-t hoz létre és helyettesí
 # Közbevágás:
 # A stringek is indexelhetőek:
 lanc = "Hello Szabi, mászol ki azonnal a routeremből?!"
-print(lanc[5:10])
+print(lanc[5:11])
 # Viszont a tuple-höz hasonlóan az elemei megváltoztathatatlanok:
 # lanc[5] = "G"  # Ez hibát fog dobni
 
@@ -104,10 +111,10 @@ print(karakterek)
 
 # Még annyi megjegyeznivaló van, hogy a listák, tuple-ök elemei lehetnek listák, tuple-ök is.
 # Ezeket többdimenziós listáknak, tuple-öknek nevezzük.
-# A tuple, bár nem megváltoztatható, de ha van benne lista, az a lista már megváltoztatható
+# Maga a tuple, nem megváltoztatható, de ha van benne egy lista, az a lista már megváltoztatható
 mytup = (None, "asd", ["foo", "bar", "foobar"], ("hello", "bello"))
 mytup[2][::2] = ["Sör", "Bor"]  # ez legális
-mytup[3] += "mellow"  # ilyet is lehet
+# mytup[3] += ("mellow",)  # ilyet nem lehet! mytup[3] ugyanis a hello-bello tuple, ami megváltoztathatatlan
 
 # -------
 # Aliasok
@@ -138,7 +145,7 @@ tup1 = ("Hello", "Ács", "Feri", "te", "pirosinges", "jampecológus")
 tup2 = tup1
 print("tup1:", tup1)
 print("tup2:", tup2)
-tup1 += ("hogy", "ennél", "kefét")
+tup1 += ("hogy", "szarnál", "süncsaládot")
 print("tup1:", tup1)
 print("tup2:", tup2)
 
@@ -173,7 +180,8 @@ print("'RAM' in nagy_string:", "RAM" in nagy_string)
 # általában a memóriában elfoglalt helyének a címe (32/64 bit)
 # Ez lekérhető:
 lista1 = ["Szervác", "Pongrác", "Bonifác"]
-print("lista 1 ID-ja:", id(lista1))
+print("lista 1 ID-ja:", id(lista1))  # decimális forma
+print("vagy ha így jobban tetszik:", hex(id(lista)))  # hexadecimális forma
 # Alias esetén nyilván a két ID meg fog egyezni
 # valódi másolat esetén pedig eltérő lesz:
 lista2 = lista1
@@ -181,5 +189,17 @@ print("Alias?", id(lista1) == id(lista2))
 # A fenti szintaxist egyszerűsíti az <is> kulcsszó:
 print("Alias?", lista1 is lista2)
 
-# Ez nem csak egyenlőséget vizsgálat, hanem azonosságot is.
+# Két módszer a valódi másolat készítésére:
+lista2 = list(lista1)
+lista3 = lista1[:]
+
+print("lista1 is lista2:", lista1 is lista2)
+print("lista1 is lista3:", lista1 is lista3)
+
+# Az <is> nem csak egyenlőséget vizsgálat, hanem azonosságot is.
 # Bár nyilván azonosság esetén egyenlőség is fenn fog állni :)
+
+# Katák:
+# palindrom.py
+# seq.py
+# portscanner.py
