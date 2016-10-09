@@ -198,3 +198,8 @@ print("lista1 is lista3:", lista1 is lista3)
 
 # Az <is> nem csak egyenlőséget vizsgálat, hanem azonosságot is.
 # Bár nyilván azonosság esetén egyenlőség is fenn fog állni :)
+
+# Katák:
+# palindrom.py
+# seq.py
+# portscanner.py
