@@ -9,37 +9,37 @@
 # ------------
 
 # a while ciklus addik ismétlődik, amíg a megadott feltétel igaz.
-i = 0
-while i < 10:
-    print("i értéke:", i)
-    i += 1
-
-# A while végére tehetünk egy else blokkot. Ez akkor fut le, ha a feltétel
-# hamisra váltott:
-i = 0
-while i < 3:
-    i += 1
-else:
-    print("i értéke az else-ben:", i)
+# i = 0
+# while i < 10:
+#     print("i értéke:", i)
+#     i += 1
+#
+# # A while végére tehetünk egy else blokkot. Ez akkor fut le, ha a feltétel
+# # hamisra váltott:
+# i = 0
+# while i < 3:
+#     i += 1
+#
+# print("i értéke az else-ben:", i)
 
 # Én személy szerint a while-t ritkán használom, de van egy nagyon praktikus alkalmazása
 # Végtelen ciklus:
-print("Hello Szab", end="")
-while 1:
-    print("i", end="")  # A program futását leállíthatod, ha nyomsz egy Ctrl-C-t :)
-
+# print("Hello Szab", end="")
+# while 1:
+#     print("i", end="")  # A program futását leállíthatod, ha nyomsz egy Ctrl-C-t :)
+#
 # Ilyen végtelen ciklusokat gyakran használunk, például eseményfigyelőként:
 dobasosszeg = 0
-while 1:
+while dobasosszeg > 30:
     dobasosszeg += int(input("Kockadobás: "))
-    if dobasosszeg > 30:
-        break
 
 # Lista végigjárása while segítségével
-lista = [1, 2, 3, 4, 5, 6, 7, 8]
+lista = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 i = 0  # az iterációs index
 while i < len(lista):
-    print("i =", i, "lista[i] =", lista[i])
+    elem = lista[i]
+    print("i =", i, "lista[i] =", elem)
+    i += 1
 
 # A break utasítással lehet "kitörni" a ciklusból.
 # Egymásba ágyazott ciklusoknál nem működik
