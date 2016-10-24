@@ -27,6 +27,7 @@ else:
 print("Hello Szab", end="")
 while 1:
     print("i", end="")  # A program futását leállíthatod, ha nyomsz egy Ctrl-C-t :)
+    break
 
 # Ilyen végtelen ciklusokat gyakran használunk, például eseményfigyelőként:
 dobasosszeg = 0
@@ -40,6 +41,7 @@ lista = [1, 2, 3, 4, 5, 6, 7, 8]
 i = 0  # az iterációs index
 while i < len(lista):
     print("i =", i, "lista[i] =", lista[i])
+    i += 1
 
 # A break utasítással lehet "kitörni" a ciklusból.
 # Egymásba ágyazott ciklusoknál nem működik
@@ -146,6 +148,7 @@ pontok = [-1, 20, 8, 15, 18]
 i = 0
 while i < len(emberek):
     print(emberek[i], "pontja:", pontok[i])
+    i += 1
 
 # Csinálhatod for + range segítségével:
 for i in range(len(emberek)):
