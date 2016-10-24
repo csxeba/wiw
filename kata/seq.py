@@ -27,4 +27,13 @@ def beolvas(faj):
 
 minta_dns = "ATTCGTCTCCATCACAGCTGAGCTCCATAAGGGGACTGGCCATAGAAGT"
 
+if minta_dns in beolvas("homo_sapiens"):
+    print("A minta emberi DNS")
+
+if minta_dns in beolvas("bos_taurus"):
+    print("A minta boci DNS")
+
+if minta_dns in beolvas("drosophila_melanogaster"):
+    print("A minta muslinca DNS")
+
 # Milyen fajból vettem a mintámat?

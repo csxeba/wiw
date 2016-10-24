@@ -17,4 +17,12 @@
 celpontok = []
 
 while 1:
-    pass
+    ip = input("IP > ")
+    startport = input("Startport > ")
+    endport = input("Endport > ")
+    if ip == "":
+        quit()
+    tpl = (ip, startport, endport)
+    celpontok += [tpl]
+
+celpontok = [tpl]
