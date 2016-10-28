@@ -71,7 +71,7 @@ Gondolatolvasó
 
 - Beépített funkciók:
 -- Kulcsszavak: in
--- Függvények: min, max, sum, len, any, all, sorted
+-- Függvények: min, max, sum, len, (any, all), sorted
 
 --------------------------------------------
 
