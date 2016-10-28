@@ -5,7 +5,7 @@
 # oszlopba kell adat.
 # Legyen egyértelmű, mikor hányadik rekordot írom.
 
-# Ha megvan minden bevitt adat, írd ki úgy, hogy tab
+# Ha megvan minden bevitt adat, írd ki a táblázatot!
 # a rekordokat válaszd el így: ---------------------
 # az oszlopokat pedig pipe | jellel.
 
