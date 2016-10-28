@@ -18,4 +18,3 @@ kar2vedekezes = 0.4
 # hányadik körben vagyunk.
 # Az, hogy bent van-e az ütés, a random() véletlenszám-generáló
 # függvénnyel döntsd el, ami 0 és 1 között generál számot.
-# asd for git
