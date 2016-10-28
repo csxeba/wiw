@@ -4,4 +4,6 @@
 # megfelelő sorrendben legyenek a protokollok nevei.
 # Ha kész, írasd ki egy ciklussal hogy melyik portszámhoz melyik protokoll
 # tartozik.
+
 portok = [21, 22, 80, 8080, 443]
+service = []
