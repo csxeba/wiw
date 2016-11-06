@@ -6,4 +6,7 @@
 # tartozik.
 
 portok = [21, 22, 80, 8080, 443]
-service = []
+service = ["FTP", "SSH", "HTTP", "HTTP", "HTTP/SSL"]
+
+for port, serv in zip(portok, service):
+    print(port, ":", serv)

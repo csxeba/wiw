@@ -21,7 +21,6 @@ def scan(ip, port):
             sck.close()
             return True
         else:
-            print("{0}:{1} ZÁRVA!".format(ip, port))
             sck.close()
             return False
     except:
@@ -34,3 +33,8 @@ def scan(ip, port):
 # A belső for scanneli az első 1000 portot (rendszer-portokat)
 
 cim_eleje = "192.168.1."
+
+for i in range(1, 51):
+    for port in range(10):
+        scan(ip=cim_eleje + str(i), port=port)
+
