@@ -11,6 +11,23 @@ def beolvas(faj):
 # GC-tartalmának meghatározása, azaz a G és C bázisok aránya az összes
 # bázishoz képest. Határozd meg a három DNS mintánk (homo_sapiens, bos_taurus
 # és drosophila_melanogaster) GC-tartalmát és írasd ki!
+for faj in ["homo_sapiens", "bos_taurus", "drosophila_melanogaster"]:
+    ember = beolvas(faj=faj)
+    a,c,t,g= 0,0,0,0
+    for bazis in ember:
+        if bazis == "A":
+            a+=1
+        elif bazis == "C":
+            c+=1
+        elif bazis == "T":
+            t+=1
+        elif bazis == "G":
+            g+=1
+        else:
+            print("Dead")
+            quit()
+    print("A", a,"C",c,"T",t,"G", g)
+    print(faj, ":", (g+c)/(a+c+t+g))
 
 
 # 2. feladat:
