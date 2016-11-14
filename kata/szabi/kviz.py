@@ -4,66 +4,56 @@
 # A végén szövegesen is értékeld a delikvenst.
 # Bónusz pont, ha az input prompt jól néz ki :)
 
-prompt = "\t> "
-kerdesek = [
-    "Hanyadik keruletben lakik Csabi?",
-    "10-es skálán mennyire szeret Csabi programozni Szabival?",
-    "Hány felhasználója van az nCore-nak?",
-    "Milyen színe van az égnek?"
-]
-
-valaszok = []
 pontok = 0
 
-# 1. kérdés
-kerulet = input(kerdesek[0] + prompt)
-valaszok += [ip]
+ElsoKerdes = print("Hany TV csatornat indit Vajna bacsi, csak mert raer?")
+megoldas = "1"
+print("valasz1 : 1-es lehetőség : egyet")
+print("valasz2 : 2-es lehetőség : hármat")
+print("valasz3 : 3-as lehetőség : kilencet")
 
-if ip == "7":
-    print("1. kérdés helyes!")
+megoldas = input("válaszlehetőség száma:")
+
+if megoldas == valasz3:
     pontok += 1
+    print("Okos!")
 else:
-    print("Ajj nem jó!")
+    print("Nem követed a híreket")
 
-# 2. kérdés
-eletkedv = input(kerdesek[1] + prompt)
-valaszok += [eletkedv]
+MasodikKerdes = print("Hany gigabites internet van Szabieknal?")
+valasz1 = "2"
+valasz2 = "3"
+valasz3 = "1"
+print("valasz1 : 1-es lehetőség : kettő")
+print("valasz2 : 2-es lehetőség : három")
+print("valasz3 : 3-as lehetőség : egy")
 
-if eletkedv == "1":
-    print("2. kérdés helyes!")
+megoldas = input("válaszlehetőség száma:")
+
+if megoldas == valasz3:
     pontok += 1
+    print("Szabiéknál DIGI van")
 else:
-    print("Ajj, nem jó!")
+    print("Szabiéknál sajnos nem NASA van")
 
-# 3. kérdés
-felhasznalo = input(kerdesek[2] + prompt)
-valaszok += [felhasznalo]
+HarmadikKerdes = print("Hany honapja szenved Csabi azzal, hogy megtanítsa a Pythont?")
+valasz1 = "3"
+valasz2 = "1"
+valasz3 = "Már Csabi sem tudja"
+print("valasz1 : 1-es lehetőség : 3")
+print("valasz2 : 2-es lehetőség : 1")
+print("valasz3 : 3-as lehetőség : Már Csabi sem tudja")
 
-if felhasznalo == "691987":
-    print("3. kérdés helyes!")
+megoldas = input("Válaszlehetőség száma:")
+
+if megoldas == valasz3:
     pontok += 1
+    print("Csabinak már csak őszhajszála fog nőni")
 else:
-    print("Ajj, nem jó!")
+    print("Csak szeretné Csabi ha ennyi ideje szenvedne")
 
-# 4. kérdés
-eg_szine = input(kerdesek[3] + prompt)
-valaszok += [eg_szine]
-
-if eg_szine == "kék":
-    print("4. kérdés helyes!")
-    pontok += 1
+print("Értékelés:")
+if pontok < 0:
+    print("Hát ez elég gyenge lett")
 else:
-    print("Ajj, nem jó!")
-
-# Értékelés
-print("-" * 50)
-print("Pontjaid száma:", pontok, "/", 4)
-print("-" * 50)
-print("Válaszok:", valaszok[0], valaszok[1],
-      valaszok[2], valaszok[3], sep="\n")
-print("-" * 50)
-
-if pontok > 0:
-    print("Ügyes vagy!")
-else:
-    print("Béna voltál!")
+    print("Jólvan, megy ez")
