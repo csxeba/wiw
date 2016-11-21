@@ -11,22 +11,17 @@ def szorzas_skalarral(vektor, skalar):
     Vektort úgy szorzunk skalárral (számmal),
     hogy minden elemét megszorozzuk.
     """
-    ujvektor = []
+    megoldas = []
     for elem in vektor:
-        ujvektor.append(elem * skalar)
+        megoldas = elem * skalar
     return ujvektor
 
 
 def norma(vektor):
     """
-    Egy vektor normája (mérete) az elemeinek négyzetösszege
-    a négyzetgyök alatt.
+    Egy vektor normája (mérete) az elemeinek összege a négyzetgyök alatt.
     Gyököt a beimportált sqrt() függvénnyel tudsz vonni.
     """
-    gyujto = 0
-    for elem in vektor:
-        gyujto += elem ** 2
-    return sqrt(gyujto)
 
 
 def vektor_plusz_vektor(vektor1, vektor2):
@@ -34,10 +29,10 @@ def vektor_plusz_vektor(vektor1, vektor2):
     Két vektort úgy adunk össze, hogy minden
     elemüket összeadjuk.
     """
-    ujvektor = []
-    for elem1, elem2 in zip(vektor1, vektor2):
-        ujvektor.append(elem1 + elem2)
-    return ujvektor
+    megoldas = []
+    for elsoelem, masodikelem in zip(vektor1, vektor2):
+        megoldas = elem1 + elem2
+    return megoldas
 
 
 def vektor_egyenlo(vektor1, vektor2):
@@ -45,11 +40,11 @@ def vektor_egyenlo(vektor1, vektor2):
     Két vektor akkor egyenlő, ha minden elemük rendre
     egyenlő.
     """
-    egyenlo = True
-    for elem1, elem2 in zip(vektor1, vektor2):
-        if elem1 != elem2:
-            egyenlo = False
-    return egyenlo
+    megoldas = []
+    for i in range(len(vektor1)):
+        osszehasonlotott = vektor1[i] == vektor2[i]
+        megoldas += [osszehasonlotott]
+    return False in megoldas
 
 
 def skalaris_szorzat(vektor1, vektor2):
@@ -61,23 +56,19 @@ def skalaris_szorzat(vektor1, vektor2):
     vektor1 második eleme * vektor2 második eleme PLUSZ
     vektor1 harmadik eleme * vektor2 harmadik eleme
     """
-    # megoldas = 0.0
-    # for e1, e2 in zip(vektor1, vektor2):
-    #     megoldas += e1 * e2
-    # return megoldas
-    return sum([e1 * e2 for e1, e2 in zip(vektor1, vektor2)])
+    pass
 
 
 def main():
     v1 = [8.7, -15.1, 3.5]
     v2 = [5.3, 3.0, -10.0]
     s1 = 3.14
-
-    print("v1 vektor szorozva s1 skalárral:", szorzas_skalarral(v1, skalar=s1))
-    print("v1 vektor normája (mérete):", norma(v1))
-    print("v1 és v2 vektorok összege:", vektor_plusz_vektor(v1, v2))
-    print("v1 és v1 vektorok egyenlők:", vektor_egyenlo(v1, v1))
-    print("v1 és v2 vektorok skaláris szorzata:", skalaris_szorzat(v1, v2))
+    # Végezd el a fenti műveleteket és írasd ki az eredményt
+    print("v1 szorozva s1-el:", szorzas_skalarral(v1, skalar=s1))
+    print("v1 vektor mérete:", norma(v1))
+    print("v1 és v2 összege:", vektor_plusz_vektor(v1, v2))
+    print("v1 és v2 egyenlő:", vektor_egyenlo(v1, v2))
+    print("v1 és v2 skalaris szorzata:", skalaris_szorzat(v1, v2))
 
 
 if __name__ == '__main__':

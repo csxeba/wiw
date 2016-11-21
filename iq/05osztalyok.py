@@ -164,5 +164,4 @@ harc(ork, elf)
 
 # TODO: objektumok, mint osztályok attribútumai
 # TODO: minden objektum!
-# TODO: leszármazás? abc?
 # TODO: katát írni!
