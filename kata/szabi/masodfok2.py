@@ -23,10 +23,9 @@ def megoldo(a, b, c):
     """Másodfokú egyenlet megoldó.
 
     Visszatér a másodfokú egyenlet listába rendezett két gyökével."""
-    Diszkriminans = b**2-4*a*c
+    diszkriminans = b**2-4*a*c
     if diszkriminans < 0:
-        print("nem jó valami, negatív a diszkrimináns")
-        return
+        return None
     x1 = (-b + sqrt(diszkriminans)) / (2*a)
     x2 = (-b - sqrt(diszkriminans)) / (2*a)
     return [x1,x2]
@@ -45,10 +44,9 @@ def main():
     ]
 
     # Oldd meg és írasd ki ciklussal!
-
-        for a,b,c in egyenletek:
-            x1,x2 = megoldo(a,b,c)
-            print("x1:", x1, "x2", x2)
+    megoldasok = [megoldo(a, b, c) for a, b, c in egyenletek]
+    megoldasok = [sqrt(elem) for elem in megoldasok if elem >= 0]
+    print(megoldasok)
 
 if __name__ == '__main__':
     main()

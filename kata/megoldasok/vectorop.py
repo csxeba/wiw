@@ -61,10 +61,11 @@ def skalaris_szorzat(vektor1, vektor2):
     vektor1 második eleme * vektor2 második eleme PLUSZ
     vektor1 harmadik eleme * vektor2 harmadik eleme
     """
-    gyujto = 0
-    for elem1, elem2 in zip(vektor1, vektor2):
-        gyujto += elem1 * elem2
-    return gyujto
+    # megoldas = 0.0
+    # for e1, e2 in zip(vektor1, vektor2):
+    #     megoldas += e1 * e2
+    # return megoldas
+    return sum([e1 * e2 for e1, e2 in zip(vektor1, vektor2)])
 
 
 def main():

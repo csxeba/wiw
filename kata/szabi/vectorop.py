@@ -40,7 +40,11 @@ def vektor_egyenlo(vektor1, vektor2):
     Két vektor akkor egyenlő, ha minden elemük rendre
     egyenlő.
     """
-    pass
+    megoldas = []
+    for i in range(len(vektor1)):
+        osszehasonlotott = vektor1[i] == vektor2[i]
+        megoldas += [osszehasonlotott]
+    return False in megoldas
 
 
 def skalaris_szorzat(vektor1, vektor2):

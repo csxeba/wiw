@@ -10,10 +10,22 @@ AND = [[[0, 0], 0],
 
 
 def mse(a, y):
+    """
+    A kvadratikus veszteségfüggvény
+    (átlagos négyzetes eltérés)
+    """
     return (a - y)**2
 
 
 def sigmoid(z):
+    """
+    A logisztikus (szigmoid) függvény:
+
+         1
+    -----------
+     1 + e^(-z)
+
+    """
     return 1. / (1. + exp(-z))
 
 
