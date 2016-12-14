@@ -3,7 +3,7 @@ Pythonban minden objektum.
 
 Itt fel fogom sorolni pár beépített típusnak néhány
 metódusát, ezeket valószínűleg fogod majd használni.
-Illetve bemutatom majd a szótár adattípust.
+Illetve bemutatom majd a szótár adattípust és a fájl objektumot.
 """
 
 # STRING
@@ -20,9 +20,8 @@ bemutatni a split() működését."""
 szavak = nagy_string.split(" ")  # space mentén darabolunk
 mondatok = nagy_string.split(". ")  # pont + space
 
-# A .lower(), .upper() metódusokkal kisbetűsség, ill. nagybetűssé
-# tehetsze egy stringet. A .capitalize minden kezdőbetűt
-# nagybetűre alakít.
+# A .lower(), .upper() metódusokkal kisbetűssé, ill. nagybetűssé
+# tehetsz egy stringet. A .capitalize() a kezdőbetűt nagybetűre alakítja.
 helytelen = nagy_string.lower()
 orditva = nagy_string.upper()
 furi = nagy_string.capitalize()
@@ -36,7 +35,7 @@ karomkodas += "DARUTOLLAS KUTYAÚRISTENIT A VILÁGNAK!"
 # Felüldefiniálom
 karomkodas = karomkodas.lower()
 
-# A .format() nagyon hasznos metódusa a függvénynek, én rengeteget
+# A .format() nagyon hasznos metódusa a stringnek, én rengeteget
 # használom. A következőképpen működik:
 nyers_mondat = "Ez egy {} metódus!"
 print("Szabi mondja:", nyers_mondat.format("szar"))
@@ -51,7 +50,7 @@ print("Szabi pontjai: {}/{}".format("tíz", 10))
 
 lista = "Itt a farsang, áll a bál".split(" ")
 lista.index("bál")  # megadja, hányadik elem a "bál"
-lista.append("keringőzik")  # hozzáfűz egy elemet
+lista.append("keringőzik")  # hozzáfűz egy elemet helyben
 lista.sort()  # helyben rendezés: nem tér vissza semmivel!
 
 # A következő a join(), ami igazából a string metódusa, de
@@ -85,7 +84,7 @@ for kulcs in gyumolcsok_szinei:
 
 # Ez nagyon fontos: a szótárak rendezetlenül tárolják az adatokat.
 # ez azt jelenti, hogy hiába adod meg valamilyen sorrendben a kulcsokat,
-# bejáráskor nem sorrendben jönnek vissza.
+# bejáráskor nem sorrendben jönnek vissza (ha mégis, az véletlen))
 
 # Viszont több metódus is van, amivel másféleképpen is bejárhatóak:
 # .keys() végeredmény szempontjából ugyanaz, mint a sima for.
@@ -127,3 +126,43 @@ iq = [-5, 220, 320, 420]
 szotar = dict(zip(emberek, iq))
 for nev in szotar:
     print("{} IQ-ja: {}".format(nev, szotar[nev]))
+
+##########
+# FÁJLOK #
+##########
+
+# Avagy I/O (input/output)
+
+# Pythonban egy fájlt megnyithatsz pl. írásra vagy olvasásra
+# az open() függvény használatával.
+# Az open() három argumentumot vár:
+# path: a megynyitni kívánt fájl elérési útja
+# mode: "r" vagy "w" (string!) olvasás vagy írás. Ha nem adsz meg semmit,
+# a default mód az olvasás. További módok is vannak, de azokkal
+# nem érdemes most foglalkozni.
+# coding: a karakterkódolása a fájlnak. Python 3-ban alapból
+# "utf-8" (string!), de lehet még "cp1250" vagy "latin1" a windowsos
+# magyar szövegek kódolása.
+
+fajl_objektum = open("probafajl.txt", "w")
+
+# Írásra megnyitjuk ezt a fájlt. Ha nem létezik, automatikusan
+# létrehozásra kerül utf-8 kódolással.
+# Karaktereket beleírni a .write() metódussal lehet:
+fajl_objektum.write("Szabi!")
+# Ha végeztél, fontos, hogy zárd be a fájlt a .close() metódussal.
+fajl_objektum.close()
+# Ezt mindenképpen csináld meg, mert különben a fájl nyitvamarad
+# a program futása után is és ez problémákhoz vezethet (a mappát nem
+# tudod kitörölni, ha adathordozón van, nem tudod leválasztani, stb.)
+
+# olvasás fájlból:
+fajl_objektum = open("probafajl.txt")  # alapból read módban nyílik meg
+string_fajlbol = fajl_objektum.read()  # kiolvassa a teljes tartalmat
+fajl_objektum.close()  # bezárjuk. Read módos fájloknál elhagyható
+
+# Amire figyelni kell, mert hibákhoz vezethet:
+# a karakterkódolás: minden string, ami létrejön a memóriában valamilyen
+# karakterkódolásban van. Ez Pythonnál alapból UTF-8. Egy fájlba íráskor
+# egyezni kell a fájl és a string kódolásának. Olvasáskor, ha a fájl nem
+# UTF-8, akkor meg kell adni a kódolást.
