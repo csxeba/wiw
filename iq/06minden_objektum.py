@@ -166,3 +166,12 @@ fajl_objektum.close()  # bezárjuk. Read módos fájloknál elhagyható
 # karakterkódolásban van. Ez Pythonnál alapból UTF-8. Egy fájlba íráskor
 # egyezni kell a fájl és a string kódolásának. Olvasáskor, ha a fájl nem
 # UTF-8, akkor meg kell adni a kódolást.
+
+# Egyéb infók (apróbetűs rész)
+# Megnyithatsz még fájlt bináris módban is:
+# "wb" a bináris írás, "rb" a bináris olvasás.
+# Ezeket bináris stringekbe olvassa a Python, illetve bináris adatot
+# tudsz beleírni ezekbe.
+# Ezekre érettségire nem hiszem, hogy szükség lesz, de hálózatozáshoz
+# és hacker dolgokhoz általában ezt használjuk, pl. portokon is
+# bináris adatok formájában kommunikálunk.
