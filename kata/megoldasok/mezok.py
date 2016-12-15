@@ -1,6 +1,6 @@
 """
 Írj egy hangya osztályt.
-A hangyának legyen egy neve (string) és egy pozíciója (tuple)
+A hangyának legyen egy neve (string) és egy pozíciója (lista)
 A hangya pozícióját X és Y koordinátákkal határozzuk meg.
 A képzeletbeli pályánk 10x10-es.
 A hangya osztálynak legyen egy mozgást vezérlő metódusa, ami
@@ -16,6 +16,18 @@ class Hangya:
             self.poz = [5, 5]
         else:
             self.poz = list(startpoz)
+
+    def fel(self):
+        self.mozgas("fel")
+
+    def le(self):
+        self.mozgas("le")
+
+    def balra(self):
+        self.mozgas("balra")
+
+    def jobbra(self):
+        self.mozgas("jobbra")
 
     def mozgas(self, merre):
         if merre == "fel":
