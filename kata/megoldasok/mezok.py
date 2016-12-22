@@ -69,3 +69,8 @@ class Hangya:
             oldalt_voltam = False
 
         return oldalt_voltam or legfelul_voltam
+
+if __name__ == '__main__':
+    z = Hangya("Z")
+    for _ in range(100):
+        z.fel()
