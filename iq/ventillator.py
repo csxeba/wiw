@@ -64,4 +64,4 @@ def sok_venti():
 
 
 if __name__ == '__main__':
-    egy_venti()
+    sok_venti()
