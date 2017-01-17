@@ -6,7 +6,8 @@ class Vetel:
 
         masodiksor = sorpar[1]
         if szame(masodiksor[0]):
-            self.kifejlett = int(masodiksor[0])
+            szamok = masodiksor[:5].split("/")
+            self.kifejlett = int(szamok[0])
             self.kolyok = int(masodiksor[2])
             self.uzenet = masodiksor[4:]
         else:
