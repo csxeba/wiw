@@ -1,4 +1,4 @@
-ROOT = "E:/PyCharm/wiw/data/otszaz/"
+ROOT = "/data/Prog/PyCharm/wiw/data/otszaz/"
 
 
 def pull_data(path):

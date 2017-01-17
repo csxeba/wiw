@@ -1,7 +1,7 @@
 import string
 import io
 
-ROOT = "E:/PyCharm/wiw/data/otszaz/"
+ROOT = "/data/Prog/PyCharm/wiw/data/otszaz/"
 
 file=open(ROOT + "penztar.txt")
 sorok=file.readlines()
@@ -65,9 +65,9 @@ def harmas_feladat():
 
 harmas_feladat()
 
-#vasarlas_sorszama=input("Adja meg a vásárlás sorszámát:")
-arucikk_neve=input("Adja meg az árucikk nevét:")
-darabszam=input("Adja meg a darabszámot:")
+vasarlas_sorszama=input("Adja meg a vásárlás sorszámát: ")
+arucikk_neve=input("Adja meg az árucikk nevét: ")
+darabszam=input("Adja meg a darabszámot: ")
 
 def otos_feladat_a():
     elofordulas_szama = 1
@@ -109,12 +109,14 @@ def ertek(darab):
 print("Az összeg", ertek(darabszam) , "ft.")
 
 def nyolcas_feladat():
+    """Készítse el az osszeg.txt fájlt, amelybe soronként az egy-egy vásárlás alkalmával
+fizetendő összeg kerüljön a kimeneti mintának megfelelően!"""
     fajl=open("osszeg.txt", "w+")
     sorszam = 0
     for vasarlas in osszes_vasarlas:
         sorszam+=1
+
         fajl.write(str(sorszam)+": "+str(ertek(len(vasarlas)))+"\n")
     fajl.close()
     
 nyolcas_feladat()
-    
